@@ -76,7 +76,6 @@ int main(void) {
             eds[u].insert(v);
             eds[v].insert(u);
         }
-        // set<pair<int, int>> q;
         ll best = 0;
 
         vector<set<pair<int, int>>> qs(1);
@@ -84,15 +83,11 @@ int main(void) {
             qs[0].insert({eds[i].size(), i});
         }
 
-        // vector<int> grp(N);
-        // vector<int> grpsz(N);
         for (int i = 1; qs.size(); i++) {
             vector<set<pair<int, int>>> qs1;
             vector<int> ids(N, -1);
             ll biggest = 0;
-            // cout << "i:" << i << "\n";
             for (auto& q : qs) {
-                // cout << "q:" << q.size() << "\n";
                 bool mod = 0;
                 while (q.size()) {  // at most O(N)
                     auto [edc, n] = *q.begin();
@@ -112,11 +107,9 @@ int main(void) {
                     biggest = max(biggest, (ll)q.size());
                     continue;
                 }
-                // cout << "mod " << q.size() << "\n";
                 int acc = 0;
                 for (auto [edc, n] : q) {  // O(N) each
                     if (ids[n] != -1) continue;
-                    // cout << "grp:" << acc << "\n";
                     int acc1 = 0;
                     deque<int> q1;
                     q1.push_back(n);
@@ -128,7 +121,6 @@ int main(void) {
                             if (ids[cur] != acc) return SIGSEGV;
                             continue;
                         }
-                        // cout << "  " << cur << "\n";
                         ids[cur] = acc;
                         acc1++;
                         q2.insert({eds[cur].size(), cur});

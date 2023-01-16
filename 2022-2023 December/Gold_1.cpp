@@ -10,7 +10,6 @@ vector<vector<vector<int>>> dp;
 
 int solve(int fr, int mon, int con) {
     if (fr == N) return 0;
-    // cout << "sol " << fr << " " << mon << " " << con << "\n";
     auto& sl = dp[fr][mon][con];
     if (sl != -1) return sl;
     int best = solve(fr + 1, mon, con);

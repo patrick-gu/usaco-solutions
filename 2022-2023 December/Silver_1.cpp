@@ -28,39 +28,6 @@ int main(void) {
     ll each = accumulate(hs.begin(), hs.end(), 0LL) / N;
     deque<tuple<ll, ll, ll>> actspush;
     deque<tuple<ll, ll, ll>> actspull;
-    // deque<ll> nodeq;
-    // for (int i = 0; i < N; i++) {
-    //     if (es[i].size() == 1) {
-    //         nodeq.push_back(i);
-    //     }
-    // }
-    // while (nodeq.size()) {
-    //     ll n = nodeq.front();
-    //     nodeq.pop_front();
-    //     if (!es[n].size()) continue;
-    //     if (es[n].size() != 1) {
-    //         while (1) {
-    //         }
-    //     }
-    //     ll adj = *es[n].begin();
-    //     es[n].clear();
-    //     es[adj].erase(es[adj].find(n));
-    //     if (es[adj].size() == 1) {
-    //         nodeq.push_back(adj);
-    //     }
-    //     if (hs[n] < each) {
-    //         ll need = each - hs[n];
-    //         actspull.push_front({adj, n, need});
-    //         hs[n] = each;
-    //         hs[adj] -= need;
-    //     } else if (hs[n] > each) {
-    //         ll surp = hs[n] - each;
-    //         actspush.push_back({n, adj, surp});
-    //         hs[n] = each;
-    //         hs[adj] += surp;
-    //     }
-    // }
-    // cout << each << "ea\n";
     set<pair<ll, ll>> nodeq;
     for (int i = 0; i < N; i++) {
         nodeq.insert({es[i].size(), i});
@@ -69,17 +36,10 @@ int main(void) {
         auto [ecnt1, n1] = *nodeq.begin();
         ll ecnt = ecnt1;
         ll n = n1;
-        // cout << n << " " << ecnt << "a" << hs[n] << endl;
         nodeq.erase(nodeq.begin());
-        // cout << nodeq.size() << "\n";
         if (ecnt == 0) {
             if (nodeq.size() > 0) return SIGSEGV;
             if (hs[n] != each) {
-                // cout << "a\n";
-                // cout << hs[n] << "\n";
-                // cout << each << "\n";
-                // cout << hs[n] << " " << each << "\n";
-                // return SIGSEGV;
                 while (1) {
                 }
             }
@@ -88,7 +48,6 @@ int main(void) {
             return SIGSEGV;
         }
 
-        // cout << "ok\n";
         ll adj = *es[n].begin();
         es[n].clear();
         nodeq.erase(nodeq.find({es[adj].size(), adj}));

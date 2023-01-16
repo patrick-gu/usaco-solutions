@@ -18,7 +18,6 @@ int main(void) {
         }
     }
     if (N == 1) {
-        // cout << "0\n";
         return 0;
     }
     vector<ll> as = {0, rs[0][1]};
@@ -33,7 +32,6 @@ int main(void) {
         }
         ll added = as[i - 1] + rs[i - 1][i];
         ll subd = as[i - 1] - rs[i - 1][i];
-        // cout << "w " << i << " " << added << " " << subd << "\n";
         bool addwork = max(max(added, as[i - 1]), as[i - 2]) -
                            min(min(added, as[i - 1]), as[i - 2]) ==
                        rs[i - 2][i];
@@ -42,8 +40,6 @@ int main(void) {
                        rs[i - 2][i];
         if (addwork && subwork) {
             if (as[i - 2] != as[i - 1]) {
-                // as.push_back(added);
-                // goto OK;
                 return SIGSEGV;
             }
             for (int j = i - 3; j >= 0; j--) {
@@ -58,8 +54,6 @@ int main(void) {
                              rs[j][i];
                 if (addw1 && subw1) {
                     return SIGSEGV;
-                    // as.push_back(added);
-                    // goto OK;
                 }
                 if (addw1) {
                     as.push_back(added);
@@ -68,9 +62,6 @@ int main(void) {
                     as.push_back(subd);
                     goto OK;
                 } else {
-                    // as.push_back(added);
-                    // goto OK;
-                    // cout << "eeee\n";
                     return SIGSEGV;
                 }
             }
@@ -81,7 +72,6 @@ int main(void) {
         } else if (subwork) {
             as.push_back(subd);
         } else {
-            // cout << "aaaaa\n";
             return SIGSEGV;
         }
     }
@@ -91,9 +81,6 @@ int main(void) {
         cout << as[i] - red << " ";
     }
     cout << as.back() - red << "\n";
-    // for (ll l : as)
-    //     cout << l << " ";
-    // cout << "\n";
 
     // shift to range
 }

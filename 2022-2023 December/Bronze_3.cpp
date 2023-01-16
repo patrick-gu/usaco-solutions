@@ -43,29 +43,6 @@ int main(void) {
                             }
                         }
                     }
-                    // cout << "bit " << bit << " su " << s0 << " " << s1 << " "
-                    //      << u0 << " " << u1 << "\n";
-                    // if (!s0 && !u0) {
-                    //     cout << "if " << bit << " 0 \n";
-                    //     for (int j = 0; j < ss.size();) {
-                    //         if (!ss[j].second) {
-                    //             ss.erase(ss.begin() + j);
-                    //         } else {
-                    //             j++;
-                    //         }
-                    //     }
-                    //     checked[bit] = 1;
-                    // } else if (!s1 && !u1) {
-                    //     cout << "if " << bit << " 1 \n";
-                    //     for (int j = 0; j < ss.size();) {
-                    //         if (ss[j].second) {
-                    //             ss.erase(ss.begin() + j);
-                    //         } else {
-                    //             j++;
-                    //         }
-                    //     }
-                    //     checked[bit] = 1;
-                    // }
                     if (!s0 || !s1) {
                         for (int j = 0; j < ss.size();) {
                             if (ss[j].first[bit]) {

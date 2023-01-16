@@ -73,7 +73,6 @@ int main(void) {
 
         outcome = 0;
         for (int i = 0; i < N; i++) {
-            // cout << "i " << i << " " << as[i] << "\n";
             if (as[i] % 4 == 0) {
                 continue;
             }
@@ -86,17 +85,13 @@ int main(void) {
             } else if (as[i] % 4 == 1) {
                 auto it = mod1pr.upper_bound(as[i]);
                 it--;
-                // cout << "sel " << (*it) << "\n";
                 win = (as[i] - (*it)) / 2 + 1;
             } else if (as[i] % 4 == 3) {
                 auto it = mod3pr.upper_bound(as[i]);
                 it--;
                 win = (as[i] - (*it)) / 2 + 1;
             }
-            // cout << "w " << win << "\n";
             if (win % 2 == 0) {
-                // cout << "fail\n";
-                // return SIGSEGV;
                 while (1) {
                 }
             }

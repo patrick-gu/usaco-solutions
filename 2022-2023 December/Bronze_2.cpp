@@ -45,11 +45,6 @@ int main(void) {
                     }
                     break;
                 }
-                // if (ans[opt] == 'G') {
-                //     int j = opt - 1;
-                //     while (1) {
-                //     }
-                // }
                 ans[opt] = 'H';
                 i = opt + K + 1;
             } else {
@@ -57,28 +52,6 @@ int main(void) {
             }
         }
 
-        // int gs = -1, hs = -1;
-        // int acc = 0;
-        // string ans;
-        for (int i = 0; i < N; i++) {
-            // if (s[i] == 'G') {
-            //     if (gs < i) {
-            //         gs = i + K;
-            //         acc++;
-            //         ans.push_back('G');
-            //     } else {
-            //         ans.push_back('.');
-            //     }
-            // } else {
-            //     if (hs < i) {
-            //         hs = i + K;
-            //         acc++;
-            //         ans.push_back('H');
-            //     } else {
-            //         ans.push_back('.');
-            //     }
-            // }
-        }
         cout << acc << "\n" << ans << "\n";
     }
 }

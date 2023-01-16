@@ -26,21 +26,6 @@ int main(void) {
         hs[x] += y;
 
         ll acc = 0;
-        // if (N <= 100) {
-        //     for (int i = 0; i < N; i++) {
-        //         for (int j = i + 1; j < N; j++) {
-        //             for (int k = i + 1; k < j; k++) {
-        //                 if ((hs[k] - hs[i]) * (j - i) >
-        //                     (hs[j] - hs[i]) * (k - i)) {
-        //                     goto notok;
-        //                 }
-        //             }
-        //             acc++;
-
-        //         notok:;
-        //         }
-        //     }
-        // } else {
         for (ll i = 0; i < N; i++) {
             ll msy = -2000000LL, msx = 0;
             for (ll j = i + 1; j < N; j++) {
@@ -51,7 +36,6 @@ int main(void) {
                 }
             }
         }
-        // }
 
         cout << acc << "\n";
     }
